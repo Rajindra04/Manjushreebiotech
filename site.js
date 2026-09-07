@@ -11,7 +11,7 @@ let SITE_DATA = null;
 
 /* ---------------- admin config ---------------- */
 // Set this to your deployed Cloudflare Worker URL (see WRANGLER_GUIDE.md).
-const ADMIN_API_BASE = "https://manjushree-biotech-admin.rajindra04.workers.dev";
+const ADMIN_API_BASE = "manjushree-biotech-admin.rajindra04.workers.dev";
 const SESSION_KEY = "mb_admin_session";
 const PENDING_PATCH_KEY = "mb_pending_patch";   // unsaved field edits, deep-merged onto data.json
 const PENDING_IMAGES_KEY = "mb_pending_images"; // unsaved image uploads, base64, keyed by repo path
