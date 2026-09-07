@@ -69,6 +69,7 @@ main{ display:block; }
   border-bottom: 1px solid var(--line);
 }
 .topnav-inner{
+  position: relative;
   max-width:1180px; margin:0 auto; padding: 0 6vw;
   height: 78px; display:flex; align-items:center; justify-content:space-between;
 }
@@ -108,6 +109,18 @@ main{ display:block; }
 .hero h1{ font-size: clamp(2.3rem, 4.8vw, 3.9rem); line-height: 1.08; max-width: 18ch; }
 .hero .lede{ margin-top: 1.5rem; }
 .hero-actions{ margin-top:2.3rem; display:flex; gap:1rem; flex-wrap:wrap; }
+
+/* ---------- hero trace (signature graphic, animated brass line) ---------- */
+.trace{ display:block; width:100%; height:auto; }
+.trace path{
+  fill:none; stroke: var(--brass-bright); stroke-width: 1.4;
+  stroke-dasharray: 1400; stroke-dashoffset: 1400;
+  animation: trace-draw 2s cubic-bezier(.3,.8,.2,1) forwards;
+}
+.trace .trace-mist{ stroke: var(--mist-dim); opacity:0.5; }
+@keyframes trace-draw{ to{ stroke-dashoffset:0; } }
+.hero-trace{ margin-top: 2.6rem; max-width: 640px; }
+
 
 /* ---------- section spacing ---------- */
 .section{ padding: 5rem 0; }
@@ -232,6 +245,25 @@ textarea{ resize:vertical; }
 .page-fade{ animation: fadeUp .5s ease-out both; }
 @keyframes fadeUp{ from{ opacity:0; transform: translateY(8px); } to{ opacity:1; transform:none; } }
 
+/* ---------- generic modal (text/choice/detail editors) ---------- */
+.modal-overlay{
+  display:none; position:fixed; inset:0; z-index:200;
+  background: rgba(20,28,38,0.78); backdrop-filter: blur(4px);
+  align-items:center; justify-content:center; padding: 2rem;
+}
+.modal-overlay.open{ display:flex; }
+.modal-box{
+  background: var(--paper); color: var(--slate); max-width:640px; width:100%;
+  max-height:84vh; overflow-y:auto; border-radius:4px; position:relative;
+}
+.modal-box input, .modal-box textarea, .modal-box select{
+  background:#fff; border:1px solid var(--line-dark); color: var(--slate);
+}
+.modal-box input:focus, .modal-box textarea:focus{ border-color: var(--brass); }
+.modal-box label{ color: var(--mist-dim); }
+.modal-body{ padding: 2rem; }
+.modal-body h3{ font-family:var(--serif); color: var(--slate); }
+
 /* utility */
 .mt-lg{ margin-top: 2.6rem; }
 .flex-between{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; }
@@ -240,3 +272,108 @@ textarea{ resize:vertical; }
   border:1px dashed var(--line); padding: 0.7rem 1rem; margin-top:1.6rem; max-width: var(--measure);
 }
 .section--paper .page-note{ border-color: var(--line-dark); }
+
+/* ============================================================
+   ADMIN / EDIT MODE
+   ============================================================ */
+/* !important is deliberate here: .edit-only elements often carry a second
+   layout class (.editable-controls) whose own display rule has equal
+   specificity and could otherwise win purely by file order. */
+.edit-only{ display:none !important; }
+body.edit-mode .edit-only{ display:inline-flex !important; }
+body.edit-mode .edit-only.block{ display:block !important; }
+.hidden{ display:none !important; }
+
+.admin-trigger{
+  font-family: var(--mono); font-size:0.62rem; letter-spacing:0.06em;
+  color: var(--mist-dim); border:1px solid var(--line); padding:5px 9px;
+  border-radius:2px; background:none; cursor:pointer;
+  transition: color .2s ease, border-color .2s ease;
+}
+.admin-trigger:hover{ color: var(--paper); border-color: var(--mist); }
+.admin-trigger.is-logout{ color:#c97a63; border-color: rgba(201,122,99,0.35); }
+.admin-trigger.is-logout:hover{ color:#c97a63; border-color:#c97a63; }
+
+.edit-pencil{
+  display:inline-flex; align-items:center; gap:5px;
+  font-family: var(--mono); font-size:0.64rem; letter-spacing:0.02em;
+  color: var(--brass-bright); background: rgba(199,154,68,0.1);
+  border:1px solid rgba(199,154,68,0.35); border-radius:2px;
+  padding:4px 9px; cursor:pointer;
+  transition: background .2s ease;
+}
+.edit-pencil:hover{ background: rgba(199,154,68,0.2); }
+.edit-pencil.danger{ color:#c97a63; background: rgba(201,122,99,0.08); border-color: rgba(201,122,99,0.35); }
+.edit-pencil.danger:hover{ background: rgba(201,122,99,0.18); }
+.section--paper .edit-pencil{ color: var(--oxblood); background: rgba(122,46,46,0.06); border-color: rgba(122,46,46,0.3); }
+
+.editable-controls{ display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:0.9rem; }
+.editable-wrap{ position:relative; }
+.editable-img-btn{
+  position:absolute; top:10px; right:10px; z-index:3;
+  font-family: var(--mono); font-size:0.6rem;
+  background: rgba(20,28,38,0.82); color: var(--paper); border:1px solid var(--line);
+  padding:6px 10px; border-radius:2px; cursor:pointer;
+}
+.editable-img-btn:hover{ background: rgba(20,28,38,0.94); }
+
+.add-item-btn{
+  font-family: var(--mono); font-size:0.7rem;
+  color: var(--slate); background: var(--brass-bright); border:none;
+  padding:0.65rem 1.1rem; border-radius:2px; cursor:pointer;
+  margin-top:1.4rem;
+}
+.add-item-btn:hover{ background: var(--brass); }
+
+/* generic admin modal (login / text edit / detail edit) */
+.admin-overlay{
+  display:none; position:fixed; inset:0; z-index:300;
+  background: rgba(20,28,38,0.82); backdrop-filter: blur(4px);
+  align-items:center; justify-content:center; padding:1.5rem;
+}
+.admin-overlay.open{ display:flex; }
+.admin-box{
+  background: var(--paper); color: var(--slate); width:100%; max-width:460px;
+  border-radius:4px; padding:1.8rem; max-height:88vh; overflow-y:auto;
+}
+.admin-box.wide{ max-width:600px; }
+.admin-box h3{ font-family: var(--serif); font-size:1.3rem; color: var(--slate); }
+.admin-box .hint{ font-size:0.84rem; color: var(--mist-dim); margin-top:0.4rem; }
+.admin-box label{ color: var(--mist-dim); margin-top:1.1rem; }
+.admin-box label:first-of-type{ margin-top:1.4rem; }
+.admin-box input, .admin-box textarea{
+  background:#fff; border:1px solid var(--line-dark); color: var(--slate);
+}
+.admin-box input:focus, .admin-box textarea:focus{ border-color: var(--brass); }
+.admin-error{
+  display:none; font-size:0.8rem; color:#7a2e2e; margin-top:0.7rem;
+  font-family: var(--mono);
+}
+.admin-error.show{ display:block; }
+.admin-actions{ display:flex; gap:0.7rem; margin-top:1.6rem; }
+.admin-actions .btn{ flex:1; justify-content:center; }
+.btn--admin-cancel{ background:none; border:1px solid var(--line-dark); color: var(--mist-dim); }
+.btn--admin-cancel:hover{ background: rgba(20,28,38,0.05); }
+.btn--admin-confirm{ background: var(--brass); border-color: var(--brass); color:#fff; }
+.btn--admin-confirm:hover{ background: var(--brass-bright); }
+
+/* save bar */
+.save-bar{
+  display:none; position:fixed; bottom:0; left:0; width:100%; z-index:290;
+  background: var(--slate-soft); border-top:1px solid var(--line);
+  padding: 1.1rem 6vw; align-items:center; justify-content:space-between;
+  gap:1rem; flex-wrap:wrap; box-shadow: 0 -8px 24px rgba(0,0,0,0.3);
+}
+.save-bar.open{ display:flex; }
+.save-status{ font-family: var(--mono); font-size:0.78rem; color: var(--mist); }
+.save-status.is-saved{ color: var(--brass-bright); }
+.save-bar-actions{ display:flex; gap:0.7rem; }
+.btn--discard{ background:none; border:1px solid var(--line); color: var(--paper); }
+.btn--discard:hover{ background: rgba(241,233,216,0.08); }
+.btn--save{ background: var(--brass-bright); border-color: var(--brass-bright); color:#141C26; }
+.btn--save:hover{ background: #d7ac57; }
+.btn--save:disabled{ opacity:0.6; cursor:default; }
+
+/* push body content up so the save bar doesn't overlap the footer */
+body.edit-mode{ padding-bottom: 74px; }
+@media (max-width:640px){ body.edit-mode{ padding-bottom: 130px; } }

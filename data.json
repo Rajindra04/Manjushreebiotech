@@ -1,0 +1,141 @@
+{
+  "brandName": "Manjushree Biotech",
+  "brandSub": "TRADING \u00b7 QUALITY \u00b7 RESEARCH",
+  "logoUrl": "",
+  "home": {
+    "label": "Trading \u00b7 ISO Consultation \u00b7 Research",
+    "title": "Welcome to Manjushree Biotech",
+    "subtitle": "A Nepal-based biotechnology company supplying laboratory products and guiding labs to ISO accreditation today, while building the research and product-development capability we're growing into.",
+    "ctaPrimaryLabel": "ISO consultation services",
+    "ctaPrimaryHref": "iso-consultation.html",
+    "ctaSecondaryLabel": "Explore trading",
+    "ctaSecondaryHref": "trading.html",
+    "whatWeDoLabel": "What we do",
+    "whatWeDoHeading": "Three parts of one plan",
+    "whatWeDoIntro": "Trading keeps Nepal's labs supplied. Quality consultation keeps them accredited. Together they're funding and informing the biotech research work we're building toward.",
+    "pillars": [
+      { "ref": "Today", "title": "Laboratory & biotech trading", "desc": "Sourcing and supplying laboratory equipment, reagents, diagnostic kits, and biosafety consumables to hospitals, diagnostic labs, and research institutions." },
+      { "ref": "Today", "title": "ISO & laboratory quality consultation", "desc": "End-to-end support for ISO 15189:2022 medical laboratory accreditation, biosafety & biosecurity systems, and laboratory waste management \u2014 from gap assessment to audit readiness." },
+      { "ref": "Ahead", "title": "Biotech research & product development", "desc": "Applying what we learn from trading and quality systems work toward in-house molecular research and diagnostic product development." }
+    ],
+    "railLabel": "How an ISO engagement runs",
+    "railHeading": "Gap assessment to audit readiness",
+    "railIntro": "Every laboratory we work with moves through the same four stages, adapted to where they're starting from.",
+    "railLinkLabel": "See the full ISO consultation offering",
+    "railLinkHref": "iso-consultation.html"
+  },
+  "trading": {
+    "label": "What we trade",
+    "title": "Trading & distribution",
+    "subtitle": "Reliable sourcing and supply of laboratory and biotechnology products for hospitals, diagnostic laboratories, and research institutions.",
+    "categoriesLabel": "Product categories",
+    "categoriesHeading": "What we supply",
+    "categoriesIntro": "A working starting list \u2014 confirm and refine this against your actual current catalogue before publishing.",
+    "categories": [
+      { "title": "Laboratory equipment & instruments", "desc": "Bench and diagnostic equipment for clinical and research laboratories." },
+      { "title": "Reagents & consumables", "desc": "Molecular biology and general laboratory reagents, plasticware, and consumables." },
+      { "title": "Diagnostic & rapid test kits", "desc": "Testing kits for clinical and field diagnostic use." },
+      { "title": "Biosafety & PPE supplies", "desc": "Personal protective equipment and biosafety materials for laboratory and clinical settings." }
+    ],
+    "whyLabel": "Why source through us",
+    "whyHeading": "Backed by quality-systems expertise",
+    "reasons": [
+      { "title": "Quality-assured sourcing", "desc": "Every product line is chosen with the same rigor we bring to laboratory accreditation work." },
+      { "title": "Nepal-wide distribution", "desc": "Supply to hospitals, diagnostic laboratories, and research institutions across the country." },
+      { "title": "In-house technical understanding", "desc": "Our team's own laboratory and diagnostics background means product recommendations are grounded in how the equipment is actually used." },
+      { "title": "After-sales support", "desc": "Ongoing technical support after supply, not just a one-time transaction." }
+    ]
+  },
+  "iso": {
+    "label": "Laboratory quality & compliance",
+    "title": "ISO consultation services",
+    "subtitle": "Quality laboratories. Safer workplaces. Better outcomes. Three packages covering accreditation, biosafety, and waste management \u2014 practical, customized, and compliance-focused.",
+    "packages": [
+      {
+        "ref": "Package 01",
+        "title": "ISO 15189:2022 \u2014 medical laboratory quality management",
+        "intro": "Building a strong and sustainable quality management system.",
+        "groups": [
+          { "label": "Documentation", "items": ["Quality Manual (QM)", "Quality System Procedures (QSP)", "Standard Operating Procedures (SOPs)", "Forms & records"] },
+          { "label": "Assessment & implementation", "items": ["ISO 15189:2022 gap assessment", "Documentation implementation", "Risk assessment & management"] },
+          { "label": "Audit readiness", "items": ["Mock audit", "Nonconformity & corrective action support", "Internal audit training"] }
+        ]
+      },
+      {
+        "ref": "Package 02",
+        "title": "Biosafety & biosecurity",
+        "intro": "Strengthening a laboratory's biosafety and biorisk management system.",
+        "groups": [
+          { "label": "Biosafety & biorisk", "items": ["Biosafety & biosecurity", "Biorisk assessment", "Spill management", "Emergency response"] },
+          { "label": "Safe sample management", "items": ["Sample packaging", "Sample transportation", "Safe handling of biological materials"] },
+          { "label": "Occupational safety", "items": ["Fire safety & drill", "Electrical safety", "First aid", "Occupational vaccination"] },
+          { "label": "Additional support (if required)", "items": ["Biobank documentation & training"] }
+        ]
+      },
+      {
+        "ref": "Package 03",
+        "title": "Laboratory waste management",
+        "intro": "",
+        "groups": [
+          { "label": "Waste services", "items": ["Waste collection & transportation", "Safe waste disposal"] },
+          { "label": "Staff training", "items": ["Waste segregation", "Waste treatment", "Spill management"] },
+          { "label": "Disinfection", "items": ["Disinfectant preparation", "Safe & appropriate utilization", "Practical demonstration & training"] }
+        ]
+      }
+    ],
+    "howWeWorkLabel": "How we work",
+    "howWeWorkHeading": "Practical, customized, compliance-focused",
+    "checklist": ["Laboratory-specific solutions", "Experienced professional support", "Practical, hands-on training", "Documentation & implementation assistance", "Risk-based approach", "Continuous improvement focus"],
+    "ctaLabel": "Let's build a better laboratory",
+    "ctaHref": "contact.html"
+  },
+  "research": {
+    "label": "Where we're headed",
+    "title": "Research & product development",
+    "subtitle": "Trading and quality consultation are how we serve Nepal's laboratories today. Molecular research and diagnostic product development are the direction we're building toward.",
+    "pathLabel": "The path",
+    "pathHeading": "From supply chain to laboratory bench",
+    "roadmap": [
+      { "tag": "Now", "title": "Trading & ISO consultation", "desc": "Supplying laboratories and guiding them through ISO 15189:2022, biosafety, and waste-management systems \u2014 work that keeps us close to how labs actually operate day to day." },
+      { "tag": "Next", "title": "Applied laboratory services", "desc": "Extending our quality-systems and sourcing relationships into applied testing and technical laboratory services." },
+      { "tag": "Ahead", "title": "In-house biotech research & product development", "desc": "Molecular diagnostics and biotech product development, drawing on the same laboratory-quality discipline we bring to our consultation work today." }
+    ],
+    "roadmapNote": "This roadmap describes direction and intent, not committed timelines or funded programs \u2014 adjust the stages and specifics as your actual plans firm up.",
+    "focusLabel": "Focus areas we're building toward",
+    "focusHeading": "Where the science will happen",
+    "focusAreas": [
+      { "title": "Diagnostic kit development", "desc": "Applying our trading and quality-systems experience toward in-house diagnostic products." },
+      { "title": "Molecular & NGS-based testing", "desc": "Laboratory-based molecular testing capability, built on the same rigor as our accreditation consulting." },
+      { "title": "Biotech product R&D", "desc": "Product development work that grows out of what we learn supplying and auditing Nepal's laboratories." }
+    ]
+  },
+  "about": {
+    "label": "Our mission",
+    "title": "About Manjushree Biotech",
+    "intro": "Manjushree Biotech is a Nepal-based biotechnology company. We supply laboratory products and guide laboratories to accreditation today, while building toward molecular research and diagnostic product development.",
+    "beliefLabel": "What we believe",
+    "beliefHeading": "Quality is the connecting thread",
+    "beliefIntro": "Whatever we're doing \u2014 supplying a reagent, writing a Quality Manual, or eventually developing a diagnostic product \u2014 the standard is the same: laboratory-grade rigor, applied practically.",
+    "values": [
+      { "title": "Practical over theoretical", "desc": "Solutions built for how a laboratory actually runs, not just what a standard says on paper." },
+      { "title": "Built on real laboratory experience", "desc": "Our approach to trading and consultation is grounded in hands-on laboratory and diagnostics work." },
+      { "title": "Growing deliberately", "desc": "Trading and consultation fund and inform the research capability we're building, rather than the other way around." }
+    ],
+    "teamLabel": "Leadership & team",
+    "teamHeading": "Add your team here",
+    "teamIntro": "This section is a placeholder \u2014 add real names, roles, and (optionally) short bios for the people leading Manjushree Biotech.",
+    "team": [
+      { "name": "Name", "role": "Role", "bio": "One or two lines on their background and what they lead.", "imageUrl": "" },
+      { "name": "Name", "role": "Role", "bio": "One or two lines on their background and what they lead.", "imageUrl": "" },
+      { "name": "Name", "role": "Role", "bio": "One or two lines on their background and what they lead.", "imageUrl": "" }
+    ]
+  },
+  "contact": {
+    "label": "Get in touch",
+    "title": "Connect with Manjushree Biotech",
+    "intro": "For product inquiries, ISO consultation requests, or general questions \u2014 reach us directly or use the form below.",
+    "email": "info@manjushreebiotech.com",
+    "location": "Kathmandu, Nepal",
+    "formNote": "Email, address, and phone are placeholders \u2014 replace with your real contact details before this goes live. The form above doesn't send anywhere yet; it needs a backend or a service like Formspree."
+  }
+}
